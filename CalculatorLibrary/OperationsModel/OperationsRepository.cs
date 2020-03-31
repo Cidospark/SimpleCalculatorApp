@@ -11,6 +11,22 @@ namespace CalculatorLibrary.OperationsModel
     /// </summary>
     class OperationsRepository : IOperationsRepository
     {
-        
+        public string Addition(string firstNumber, string secondNumber)
+        {
+            string result = null;
+            if (firstNumber.Contains("."))
+            {
+                double num1 = double.Parse(firstNumber);
+                double num2 = double.Parse(secondNumber);
+                result = (num1 + num2).ToString();
+            }
+            else
+            {
+                int num1 = int.Parse(firstNumber);
+                int num2 = int.Parse(secondNumber);
+                result = (num1 + num2).ToString();
+            }
+            return result;
+        }
     }
 }

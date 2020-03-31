@@ -11,6 +11,12 @@ namespace CalculatorLibrary.OperationsModel
     /// </summary>
     public interface IOperationsRepository
     {
-        
+        /// <summary>
+        /// This method handles the addition operation of the calculator
+        /// </summary>
+        /// <param name="firstNumber"></param>
+        /// <param name="secondNumber"></param>
+        /// <returns></returns>
+        string Addition(string firstNumber, string secondNumber);
     }
 }
