@@ -392,14 +392,14 @@
             this.txtEntryNResult.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEntryNResult.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.txtEntryNResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEntryNResult.ForeColor = System.Drawing.Color.Cornsilk;
+            this.txtEntryNResult.ForeColor = System.Drawing.Color.NavajoWhite;
             this.txtEntryNResult.Location = new System.Drawing.Point(13, 51);
             this.txtEntryNResult.Name = "txtEntryNResult";
             this.txtEntryNResult.ReadOnly = true;
-            this.txtEntryNResult.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtEntryNResult.Size = new System.Drawing.Size(331, 68);
             this.txtEntryNResult.TabIndex = 14;
             this.txtEntryNResult.Text = "0";
+            this.txtEntryNResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtEntryNResult.WordWrap = false;
             // 
             // frmCalculator

@@ -20,6 +20,14 @@ namespace CalculatorLibrary.OperatorsModel
         string Addition(string firstNumber, string secondNumber);
 
         /// <summary>
+        /// This method handles the addition operation of the calculator
+        /// </summary>
+        /// <param name="firstNumber"></param>
+        /// <param name="secondNumber"></param>
+        /// <returns></returns>
+        string Minus(string firstNumber, string secondNumber);
+
+        /// <summary>
         /// Takes in the values to be calculated and find there result based on 
         /// the operation performed
         /// </summary>
@@ -28,14 +36,5 @@ namespace CalculatorLibrary.OperatorsModel
         /// <param name="operation"></param>
         /// <returns></returns>
         string Calculate(string fNum, string sNum, string operation);
-
-
-        /// <summary>
-        /// This method handles the addition operation of the calculator
-        /// </summary>
-        /// <param name="firstNumber"></param>
-        /// <param name="secondNumber"></param>
-        /// <returns></returns>
-        string Minus(string firstNumber, string secondNumber);
     }
 }

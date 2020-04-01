@@ -15,19 +15,15 @@ namespace CalculatorLibrary.OperatorsModel
         // perform addition operation
         public string Addition(string firstNumber, string secondNumber)
         {
-            string result = null;
             double[] values = Utility.convertToDouble(firstNumber, secondNumber);
-            result = (values[0] + values[1]).ToString();
-            return result;
+            return (values[0] + values[1]).ToString(); ;
         }
 
         // Perform minus operation
         public string Minus(string firstNumber, string secondNumber)
         {
-            string result = null;
             double[] values = Utility.convertToDouble(firstNumber, secondNumber);
-            result = (values[0] - values[1]).ToString();
-            return result;
+            return (values[0] - values[1]).ToString();
         }
 
 

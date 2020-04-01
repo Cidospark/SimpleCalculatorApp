@@ -18,9 +18,10 @@ namespace CalculatorUI
         private readonly IOperatorsRepository Calc;
         Button btn = null;
         string operatorCLicked = null;
-        bool isOperatorCLicked = false;
-        string finalResult = "0";
-        string valueEntered = "0";
+        bool operatorIsCLicked = false;
+        string firstValue = "0";
+        string lastValue = "0";
+        string result = "0";
 
         // the calculator library injected into this UI form constructor
         public frmCalculator(IOperatorsRepository calc)
@@ -37,20 +38,51 @@ namespace CalculatorUI
 
             // get the value on the button and assign it the the entry textbox
             btn = (Button)sender;
-
-            // only one dot can be added to the new entry
-            if (txtEntryNResult.Text.Contains("."))
+            
+            // if operation is already selected then execute operation else add value to new entry
+            if (operatorIsCLicked)
             {
-                if (btn.Text != ".")
-                    txtEntryNResult.Text += btn.Text;
+                // prefix a dot with zero if lastValue = 0 and the new value clicked is dot
+                if(lastValue == "0"  && btn.Text == ".")
+                    btn.Text = "0.";
+
+                // 
+                if (lastValue.Contains(".") && btn.Text.Contains("."))
+                { }
+                else { 
+                    txtEntryStatus.Text += btn.Text;
+                    lastValue += btn.Text;
+                    result = Calc.Calculate(firstValue, lastValue, operatorCLicked);
+                    txtEntryNResult.Text = result;
+                }
+                
             }
             else
-                txtEntryNResult.Text += btn.Text;
+            {
+                // only one dot can be added to the new entry
+                if (txtEntryNResult.Text.Contains("."))
+                {
+                    if (btn.Text != ".")
+                    {
+                        txtEntryNResult.Text += btn.Text;
+                        txtEntryStatus.Text += btn.Text;
+                        firstValue = txtEntryNResult.Text;
+                    }
 
-            // get the lastest value entered
-            valueEntered = txtEntryNResult.Text;
+                }
+                else
+                {
+                    // prefix a dot with 0 if it is the initial value entered
+                    if (btn.Text == ".")
+                        btn.Text = "0.";
 
-            // reset btn to null
+                    txtEntryNResult.Text += btn.Text;
+                    txtEntryStatus.Text += btn.Text;
+                    firstValue = txtEntryNResult.Text;
+                }
+            }
+
+            // reset button to null
             btn = null;
 
         }
@@ -60,28 +92,16 @@ namespace CalculatorUI
             // get the sign of the button clicked
             btn = (Button)sender;
             operatorCLicked = btn.Text;
+            operatorIsCLicked = true;
 
-            // on click of an operator copy the new entry to the entry status box
-            if(finalResult == "0")
-            {
-                finalResult = valueEntered;
-                txtEntryStatus.Text = finalResult;
-            }
-            else
-            {
-                // pass collected values and operator to the calculator library to 
-                // return result based on the operation perfomed
-                finalResult = Calc.Calculate(finalResult, valueEntered, operatorCLicked);
-            }
+            // add the sign of the button clicked to the status entry box
+            txtEntryStatus.Text +=  operatorCLicked;
             
-            
-            txtEntryStatus.Text = finalResult + " " + operatorCLicked;
-            
-            // reset the entry box to zero
-            txtEntryNResult.Text = "0";
-            valueEntered = "0";
+            // reset the last value entered
+            lastValue = "0";
+            firstValue = txtEntryNResult.Text;
 
-            // reset btn to null
+            // reset button to null
             btn = null;
         }
     }
