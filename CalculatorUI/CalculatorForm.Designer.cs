@@ -48,8 +48,8 @@
             this.btnCancelEntry = new System.Windows.Forms.Button();
             this.btnPlus = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtEntryNResult = new System.Windows.Forms.TextBox();
+            this.txtEntryStatus = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -347,8 +347,8 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Navy;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.txtEntryStatus);
+            this.panel1.Controls.Add(this.txtEntryNResult);
             this.panel1.Controls.Add(this.btnCancel);
             this.panel1.Controls.Add(this.btnCancelEntry);
             this.panel1.Location = new System.Drawing.Point(24, 18);
@@ -356,28 +356,36 @@
             this.panel1.Size = new System.Drawing.Size(360, 184);
             this.panel1.TabIndex = 19;
             // 
-            // label1
+            // txtEntryNResult
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(341, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(16, 17);
-            this.label1.TabIndex = 13;
-            this.label1.Text = "0";
+            this.txtEntryNResult.BackColor = System.Drawing.Color.Navy;
+            this.txtEntryNResult.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEntryNResult.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtEntryNResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEntryNResult.ForeColor = System.Drawing.Color.Cornsilk;
+            this.txtEntryNResult.Location = new System.Drawing.Point(3, 51);
+            this.txtEntryNResult.Name = "txtEntryNResult";
+            this.txtEntryNResult.ReadOnly = true;
+            this.txtEntryNResult.Size = new System.Drawing.Size(341, 68);
+            this.txtEntryNResult.TabIndex = 14;
+            this.txtEntryNResult.Text = "0";
+            this.txtEntryNResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtEntryNResult.WordWrap = false;
             // 
-            // textBox1
+            // txtEntryStatus
             // 
-            this.textBox1.BackColor = System.Drawing.Color.Navy;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.Cornsilk;
-            this.textBox1.Location = new System.Drawing.Point(3, 53);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(350, 68);
-            this.textBox1.TabIndex = 14;
-            this.textBox1.Text = "0";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtEntryStatus.BackColor = System.Drawing.Color.Navy;
+            this.txtEntryStatus.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEntryStatus.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtEntryStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEntryStatus.ForeColor = System.Drawing.Color.Cornsilk;
+            this.txtEntryStatus.Location = new System.Drawing.Point(3, 5);
+            this.txtEntryStatus.Name = "txtEntryStatus";
+            this.txtEntryStatus.ReadOnly = true;
+            this.txtEntryStatus.Size = new System.Drawing.Size(341, 38);
+            this.txtEntryStatus.TabIndex = 15;
+            this.txtEntryStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtEntryStatus.WordWrap = false;
             // 
             // frmCalculator
             // 
@@ -435,8 +443,8 @@
         private System.Windows.Forms.Button btnCancelEntry;
         private System.Windows.Forms.Button btnPlus;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtEntryNResult;
+        private System.Windows.Forms.TextBox txtEntryStatus;
     }
 }
 
