@@ -14,10 +14,10 @@ namespace CalculatorLibrary.OperatorsModel
         public string Addition(string firstNumber, string secondNumber)
         {
             string result = null;
-            if (firstNumber.Contains("."))
+            if (firstNumber.Contains(".") || secondNumber.Contains("."))
             {
-                double num1 = double.Parse(firstNumber);
-                double num2 = double.Parse(secondNumber);
+                double num1 = Double.Parse(firstNumber);
+                double num2 = Double.Parse(secondNumber);
                 result = (num1 + num2).ToString();
             }
             else
