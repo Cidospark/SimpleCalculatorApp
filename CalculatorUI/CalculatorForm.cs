@@ -12,19 +12,15 @@ using System.Windows.Forms;
 
 namespace CalculatorUI
 {
-    public partial class Form1 : Form
+    public partial class frmCalculator : Form
     {
         private readonly IOperatorsRepository Calc;
-        public Form1()
+        public frmCalculator(IOperatorsRepository calc)
         {
             InitializeComponent();
-            Calc = GlobalConfig.Iinstance;
+            this.Calc = calc;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string ans = Calc.Addition(textBox1.Text, textBox2.Text);
-            label1.Text = ans;
-        }
+       
     }
 }
