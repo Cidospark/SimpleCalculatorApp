@@ -9,7 +9,7 @@ namespace CalculatorLibrary.OperationsModel
     /// <summary>
     /// This class implements the operations interface thereby binding to the contract
     /// </summary>
-    class OperationsRepository : IOperationsRepository
+    public class OperationsRepository : IOperationsRepository
     {
         public string Addition(string firstNumber, string secondNumber)
         {

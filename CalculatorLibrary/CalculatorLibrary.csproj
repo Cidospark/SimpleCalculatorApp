@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GlobalConfig.cs" />
     <Compile Include="OperationsModel\IOperationsRepository.cs" />
     <Compile Include="OperationsModel\OperationsRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
