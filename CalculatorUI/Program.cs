@@ -19,7 +19,7 @@ namespace CalculatorUI
             Application.SetCompatibleTextRenderingDefault(false);
             GlobalConfig.AddIinstance();
             CalculatorLibrary.OperatorsModel.IOperatorsRepository Calc = GlobalConfig.Iinstance;
-            Application.Run(new Form1(Calc));
+            Application.Run(new frmCalculator(Calc));
 
             GlobalConfig.RemoveIinstance();
         }
