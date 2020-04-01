@@ -15,10 +15,10 @@ namespace CalculatorUI
     public partial class Form1 : Form
     {
         private readonly IOperatorsRepository Calc;
-        public Form1()
+        public Form1(IOperatorsRepository calc)
         {
             InitializeComponent();
-            Calc = GlobalConfig.Iinstance;
+            this.Calc = calc;
         }
 
         private void button1_Click(object sender, EventArgs e)

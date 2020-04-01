@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CalculatorLibrary;
 
 namespace CalculatorUI
 {
@@ -16,8 +17,9 @@ namespace CalculatorUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            CalculatorLibrary.GlobalConfig.AddIinstance();
-            Application.Run(new Form1());
+            GlobalConfig.AddIinstance();
+            CalculatorLibrary.OperatorsModel.IOperatorsRepository Calc = GlobalConfig.Iinstance;
+            Application.Run(new Form1(Calc));
         }
     }
 }
