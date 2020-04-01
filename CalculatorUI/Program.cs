@@ -20,6 +20,8 @@ namespace CalculatorUI
             GlobalConfig.AddIinstance();
             CalculatorLibrary.OperatorsModel.IOperatorsRepository Calc = GlobalConfig.Iinstance;
             Application.Run(new Form1(Calc));
+
+            GlobalConfig.RemoveIinstance();
         }
     }
 }
