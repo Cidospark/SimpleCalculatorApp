@@ -1,5 +1,5 @@
 ﻿using CalculatorLibrary;
-using CalculatorLibrary.OperationsModel;
+using CalculatorLibrary.OperatorsModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +14,7 @@ namespace CalculatorUI
 {
     public partial class Form1 : Form
     {
-        private readonly IOperationsRepository Calc;
+        private readonly IOperatorsRepository Calc;
         public Form1()
         {
             InitializeComponent();

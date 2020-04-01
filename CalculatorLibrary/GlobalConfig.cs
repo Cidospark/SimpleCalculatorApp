@@ -1,4 +1,4 @@
-﻿using CalculatorLibrary.OperationsModel;
+﻿using CalculatorLibrary.OperatorsModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +9,11 @@ namespace CalculatorLibrary
 {
     public static class GlobalConfig
     {
-        public static IOperationsRepository Iinstance { get; private set; }
+        public static IOperatorsRepository Iinstance { get; private set; }
 
         public static void AddIinstance()
         {
-            OperationsRepository op = new OperationsRepository();
+            OperatorsRepository op = new OperatorsRepository();
             Iinstance = op;
         }
     }

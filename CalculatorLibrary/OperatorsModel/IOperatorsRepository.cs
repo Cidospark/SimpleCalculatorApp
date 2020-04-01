@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CalculatorLibrary.OperationsModel
+namespace CalculatorLibrary.OperatorsModel
 {
     /// <summary>
     /// This interface provides a contract on the applications operations
     /// </summary>
-    public interface IOperationsRepository
+    public interface IOperatorsRepository
     {
         /// <summary>
         /// This method handles the addition operation of the calculator

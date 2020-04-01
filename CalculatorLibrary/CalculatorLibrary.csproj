@@ -42,8 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GlobalConfig.cs" />
-    <Compile Include="OperationsModel\IOperationsRepository.cs" />
-    <Compile Include="OperationsModel\OperationsRepository.cs" />
+    <Compile Include="OperatorsModel\IOperatorsRepository.cs" />
+    <Compile Include="OperatorsModel\OperatorsRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
