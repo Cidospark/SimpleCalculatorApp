@@ -58,7 +58,8 @@ namespace CalculatorUI
                     {
                         txtEntryStatus.Text += Temp;
                         lastValue += Temp;
-                        txtEntryNResult.Text = Calc.Calculate(firstValue, lastValue, operatorCLicked);
+                        var tempResult = Calc.Calculate(firstValue, lastValue, operatorCLicked);
+                        txtEntryNResult.Text = $"{Math.Round(Double.Parse(tempResult), 6)}";
                     }
 
                 }
