@@ -38,7 +38,7 @@ namespace CalculatorLibrary.OperatorsModel
         {
             double[] values = Utility.convertToDouble(firstNumber, secondNumber);
             if (values[1] == 0)
-                return "Can't divide by zero!"; 
+                return "Error!"; 
 
             return (values[0] / values[1]).ToString();
         }

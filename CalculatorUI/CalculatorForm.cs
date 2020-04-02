@@ -32,87 +32,156 @@ namespace CalculatorUI
 
         private void btn_clicked(object sender, EventArgs e)
         {
-            // get the value on the button and assign it the the entry textbox
-            btn = (Button)sender;
-
-            // remove the leading zero in the entry textbox
-            if (txtEntryNResult.Text == "0" && btn.Text != ".")
-                txtEntryNResult.Clear();
-
-            
-            // if operation is already selected then execute operation else add value to new entry
-            if (operatorIsCLicked)
+            // before proceeding, cancel operation if an error occur
+            try
             {
-                var Temp = btn.Text;
-                // prefix a dot with zero if lastValue = 0 and the new value clicked is dot
-                if (lastValue == "0"  && Temp == ".")
-                    Temp = "0.";
+                // get the value on the button and assign it the the entry textbox
+                btn = (Button)sender;
 
-                // 
-                if (lastValue.Contains(".") && Temp.Contains("."))
-                { }
-                else { 
-                    txtEntryStatus.Text += Temp;
-                    lastValue += Temp;
-                    result = Calc.Calculate(firstValue, lastValue, operatorCLicked);
-                    txtEntryNResult.Text = result;
-                }
-                
-            }
-            else
-            {
-                // only one dot can be added to the new entry
-                if (txtEntryNResult.Text.Contains("."))
+                // remove the leading zero in the entry textbox
+                if (txtEntryNResult.Text == "0" && btn.Text != ".")
+                    txtEntryNResult.Clear();
+
+
+                // if operation is already selected then execute operation else add value to new entry
+                if (operatorIsCLicked)
                 {
-                    if (btn.Text != ".")
+                    var Temp = btn.Text;
+                    // prefix a dot with zero if lastValue = 0 and the new value clicked is dot
+                    if (lastValue == "0" && Temp == ".")
+                        Temp = "0.";
+
+                    // 
+                    if (lastValue.Contains(".") && Temp.Contains("."))
+                    { }
+                    else
                     {
-                        txtEntryNResult.Text += btn.Text;
-                        txtEntryStatus.Text += btn.Text;
-                        firstValue = txtEntryNResult.Text;
+                        txtEntryStatus.Text += Temp;
+                        lastValue += Temp;
+                        txtEntryNResult.Text = Calc.Calculate(firstValue, lastValue, operatorCLicked);
                     }
 
                 }
                 else
                 {
-                    var Temp = btn.Text;
-                    // prefix a dot with 0 if it is the initial value entered
-                    if (txtEntryNResult.Text == "0" && Temp == ".")
-                        Temp = "0.";
+                    if (result != "0")
+                    {
+                        txtEntryStatus.Clear();
+                        txtEntryStatus.Text += result;
+                        result = "0";
+                    }
 
-                    txtEntryNResult.Text += btn.Text;
-                    txtEntryStatus.Text += Temp;
-                    firstValue = txtEntryNResult.Text;
+                    // only one dot can be added to the new entry
+                    if (txtEntryNResult.Text.Contains("."))
+                    {
+                        if (btn.Text != ".")
+                        {
+                            txtEntryNResult.Text += btn.Text;
+                            txtEntryStatus.Text += btn.Text;
+                            firstValue = txtEntryNResult.Text;
+                        }
+
+                    }
+                    else
+                    {
+                        var Temp = btn.Text;
+                        // prefix a dot with 0 if it is the initial value entered
+                        if (txtEntryNResult.Text == "0" && Temp == ".")
+                            Temp = "0.";
+
+                        txtEntryNResult.Text += btn.Text;
+                        txtEntryStatus.Text += Temp;
+                        firstValue = txtEntryNResult.Text;
+                    }
                 }
-            }
 
-            // reset button to null
-            btn = null;
+                // reset button to null
+                btn = null;
+            }catch(Exception ex)
+            {
+                ResetForm();
+            }
 
         }
 
         private void operator_click(object sender, EventArgs e)
         {
-            // get the sign of the button clicked
-            btn = (Button)sender;
-            operatorCLicked = btn.Text;
-            operatorIsCLicked = true;
+            // before proceeding, cancel operation if an error occur
+            try
+            {
+                // get the sign of the button clicked
+                btn = (Button)sender;
+                operatorCLicked = btn.Text;
+                operatorIsCLicked = true;
 
-            // add the sign of the button clicked to the status entry box
-            if (txtEntryStatus.Text == "")
-                txtEntryStatus.Text = "0";
-            txtEntryStatus.Text +=  operatorCLicked;
-            
-            // reset the last value entered
-            lastValue = "0";
-            firstValue = txtEntryNResult.Text;
+                // display zero before an operator if the status box is empty
+                if (txtEntryStatus.Text == "")
+                    txtEntryStatus.Text = "0";
 
-            // reset button to null
-            btn = null;
+                // add the sign of the button clicked to the status entry box
+                if (result != "0")
+                {
+                    txtEntryStatus.Clear();
+                    txtEntryStatus.Text += result +  operatorCLicked ;
+                    result = "0";
+                }
+                else
+                    txtEntryStatus.Text += operatorCLicked;
+
+                // reset the last value entered
+                lastValue = "0";
+                firstValue = txtEntryNResult.Text;
+
+                // reset button to null
+                btn = null;
+            }
+            catch (Exception ex)
+            {
+                ResetForm();
+            }
         }
 
+        // Display final result and reset screen
         private void btnEqualTo_Click(object sender, EventArgs e)
         {
+            txtEntryStatus.Text = "";
+            operatorIsCLicked = false;
+            result = txtEntryNResult.Text;
+        }
 
+        // reset operations
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            ResetForm();
+        }
+
+        // undo last entry
+        private void btnCancelEntry_Click(object sender, EventArgs e)
+        {
+            if(result == "0")
+            {
+                var currentExp = txtEntryStatus.Text;
+                txtEntryStatus.Text = currentExp.Substring(0, currentExp.Length-1);
+
+                result = (Double.Parse(Calc.Addition(firstValue,lastValue)) - Double.Parse(lastValue)).ToString();
+                txtEntryNResult.Text = result;
+                lastValue = "0";
+            }
+            
+        }
+
+        // helper function
+        private void ResetForm()
+        {
+            btn = null;
+            operatorCLicked = null;
+            operatorIsCLicked = false;
+            firstValue = "0";
+            lastValue = "0";
+            result = "0";
+
+            txtEntryStatus.Text = "";
+            txtEntryNResult.Text = "0";
         }
     }
 }

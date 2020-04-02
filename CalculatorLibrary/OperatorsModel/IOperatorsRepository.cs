@@ -16,7 +16,7 @@ namespace CalculatorLibrary.OperatorsModel
         /// </summary>
         /// <param name="firstNumber"></param>
         /// <param name="secondNumber"></param>
-        /// <returns></returns>
+        /// <returns> A string </returns>
         string Addition(string firstNumber, string secondNumber);
 
         /// <summary>
@@ -24,7 +24,7 @@ namespace CalculatorLibrary.OperatorsModel
         /// </summary>
         /// <param name="firstNumber"></param>
         /// <param name="secondNumber"></param>
-        /// <returns></returns>
+        /// <returns> A string </returns>
         string Minus(string firstNumber, string secondNumber);
 
         /// <summary>
@@ -32,7 +32,7 @@ namespace CalculatorLibrary.OperatorsModel
         /// </summary>
         /// <param name="firstNumber"></param>
         /// <param name="secondNumber"></param>
-        /// <returns></returns>
+        /// <returns> A string </returns>
         string Times(string firstNumber, string secondNumber);
 
 
@@ -41,9 +41,9 @@ namespace CalculatorLibrary.OperatorsModel
         /// </summary>
         /// <param name="firstNumber"></param>
         /// <param name="secondNumber"></param>
-        /// <returns></returns>
+        /// <returns> A string </returns>
         string Divide(string firstNumber, string secondNumber);
-        
+
 
         /// <summary>
         /// Takes in the values to be calculated and find there result based on 
@@ -52,7 +52,7 @@ namespace CalculatorLibrary.OperatorsModel
         /// <param name="fNum"></param>
         /// <param name="sNum"></param>
         /// <param name="operation"></param>
-        /// <returns></returns>
+        /// <returns> A string </returns>
         string Calculate(string fNum, string sNum, string operation);
     }
 }

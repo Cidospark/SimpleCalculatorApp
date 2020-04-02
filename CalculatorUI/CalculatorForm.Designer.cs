@@ -325,6 +325,7 @@
             this.btnCancel.TabIndex = 12;
             this.btnCancel.Text = "C";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnCancelEntry
             // 
@@ -341,6 +342,7 @@
             this.btnCancelEntry.TabIndex = 11;
             this.btnCancelEntry.Text = "CE";
             this.btnCancelEntry.UseVisualStyleBackColor = false;
+            this.btnCancelEntry.Click += new System.EventHandler(this.btnCancelEntry_Click);
             // 
             // btnPlus
             // 
