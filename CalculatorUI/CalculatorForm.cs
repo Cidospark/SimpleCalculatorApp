@@ -159,16 +159,22 @@ namespace CalculatorUI
         // undo last entry
         private void btnCancelEntry_Click(object sender, EventArgs e)
         {
-            if(result == "0")
+            try
             {
-                var currentExp = txtEntryStatus.Text;
-                txtEntryStatus.Text = currentExp.Substring(0, currentExp.Length-1);
+                if(result == "0")
+                {
+                    var currentExp = txtEntryStatus.Text;
+                    txtEntryStatus.Text = currentExp.Substring(0, currentExp.Length-1);
 
-                result = (Double.Parse(Calc.Addition(firstValue,lastValue)) - Double.Parse(lastValue)).ToString();
-                txtEntryNResult.Text = result;
-                lastValue = "0";
+                    result = (Double.Parse(Calc.Addition(firstValue,lastValue)) - Double.Parse(lastValue)).ToString();
+                    txtEntryNResult.Text = result;
+                    lastValue = "0";
+                }
+            }catch(Exception ex)
+            {
+                ResetForm();
             }
-            
+                        
         }
 
         // helper function
