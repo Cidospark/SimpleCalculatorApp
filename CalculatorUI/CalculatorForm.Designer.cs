@@ -68,6 +68,7 @@
             this.btnEqualTo.TabIndex = 14;
             this.btnEqualTo.Text = "=";
             this.btnEqualTo.UseVisualStyleBackColor = false;
+            this.btnEqualTo.Click += new System.EventHandler(this.btnEqualTo_Click);
             // 
             // btnZero
             // 

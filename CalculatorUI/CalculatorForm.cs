@@ -42,16 +42,17 @@ namespace CalculatorUI
             // if operation is already selected then execute operation else add value to new entry
             if (operatorIsCLicked)
             {
+                var Temp = btn.Text;
                 // prefix a dot with zero if lastValue = 0 and the new value clicked is dot
-                if(lastValue == "0"  && btn.Text == ".")
-                    btn.Text = "0.";
+                if (lastValue == "0"  && Temp == ".")
+                    Temp = "0.";
 
                 // 
-                if (lastValue.Contains(".") && btn.Text.Contains("."))
+                if (lastValue.Contains(".") && Temp.Contains("."))
                 { }
                 else { 
-                    txtEntryStatus.Text += btn.Text;
-                    lastValue += btn.Text;
+                    txtEntryStatus.Text += Temp;
+                    lastValue += Temp;
                     result = Calc.Calculate(firstValue, lastValue, operatorCLicked);
                     txtEntryNResult.Text = result;
                 }
@@ -72,12 +73,13 @@ namespace CalculatorUI
                 }
                 else
                 {
+                    var Temp = btn.Text;
                     // prefix a dot with 0 if it is the initial value entered
-                    if (btn.Text == ".")
-                        btn.Text = "0.";
+                    if (Temp == ".")
+                        Temp = "0.";
 
-                    txtEntryNResult.Text += btn.Text;
-                    txtEntryStatus.Text += btn.Text;
+                    txtEntryNResult.Text += Temp;
+                    txtEntryStatus.Text += Temp;
                     firstValue = txtEntryNResult.Text;
                 }
             }
@@ -95,6 +97,8 @@ namespace CalculatorUI
             operatorIsCLicked = true;
 
             // add the sign of the button clicked to the status entry box
+            if (txtEntryStatus.Text == "")
+                txtEntryStatus.Text = "0";
             txtEntryStatus.Text +=  operatorCLicked;
             
             // reset the last value entered
@@ -103,6 +107,11 @@ namespace CalculatorUI
 
             // reset button to null
             btn = null;
+        }
+
+        private void btnEqualTo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -20,12 +20,30 @@ namespace CalculatorLibrary.OperatorsModel
         string Addition(string firstNumber, string secondNumber);
 
         /// <summary>
-        /// This method handles the addition operation of the calculator
+        /// This method handles the subtraction operation of the calculator
         /// </summary>
         /// <param name="firstNumber"></param>
         /// <param name="secondNumber"></param>
         /// <returns></returns>
         string Minus(string firstNumber, string secondNumber);
+
+        /// <summary>
+        /// This method handles the multiplication operation of the calculator
+        /// </summary>
+        /// <param name="firstNumber"></param>
+        /// <param name="secondNumber"></param>
+        /// <returns></returns>
+        string Times(string firstNumber, string secondNumber);
+
+
+        /// <summary>
+        /// This method handles the division operation of the calculator
+        /// </summary>
+        /// <param name="firstNumber"></param>
+        /// <param name="secondNumber"></param>
+        /// <returns></returns>
+        string Divide(string firstNumber, string secondNumber);
+        
 
         /// <summary>
         /// Takes in the values to be calculated and find there result based on 
