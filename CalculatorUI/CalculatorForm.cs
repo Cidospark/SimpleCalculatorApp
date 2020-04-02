@@ -32,12 +32,13 @@ namespace CalculatorUI
 
         private void btn_clicked(object sender, EventArgs e)
         {
-            // remove the leading zero in the entry textbox
-            if (txtEntryNResult.Text == "0")
-                txtEntryNResult.Clear();
-
             // get the value on the button and assign it the the entry textbox
             btn = (Button)sender;
+
+            // remove the leading zero in the entry textbox
+            if (txtEntryNResult.Text == "0" && btn.Text != ".")
+                txtEntryNResult.Clear();
+
             
             // if operation is already selected then execute operation else add value to new entry
             if (operatorIsCLicked)
@@ -75,10 +76,10 @@ namespace CalculatorUI
                 {
                     var Temp = btn.Text;
                     // prefix a dot with 0 if it is the initial value entered
-                    if (Temp == ".")
+                    if (txtEntryNResult.Text == "0" && Temp == ".")
                         Temp = "0.";
 
-                    txtEntryNResult.Text += Temp;
+                    txtEntryNResult.Text += btn.Text;
                     txtEntryStatus.Text += Temp;
                     firstValue = txtEntryNResult.Text;
                 }
