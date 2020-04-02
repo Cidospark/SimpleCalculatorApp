@@ -48,8 +48,8 @@
             this.btnCancelEntry = new System.Windows.Forms.Button();
             this.btnPlus = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtEntryNResult = new System.Windows.Forms.TextBox();
             this.txtEntryStatus = new System.Windows.Forms.TextBox();
+            this.txtEntryNResult = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,6 +68,7 @@
             this.btnEqualTo.TabIndex = 14;
             this.btnEqualTo.Text = "=";
             this.btnEqualTo.UseVisualStyleBackColor = false;
+            this.btnEqualTo.Click += new System.EventHandler(this.btnEqualTo_Click);
             // 
             // btnZero
             // 
@@ -84,6 +85,7 @@
             this.btnZero.TabIndex = 0;
             this.btnZero.Text = "0";
             this.btnZero.UseVisualStyleBackColor = false;
+            this.btnZero.Click += new System.EventHandler(this.btn_clicked);
             // 
             // btnDot
             // 
@@ -101,6 +103,7 @@
             this.btnDot.Text = ".";
             this.btnDot.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnDot.UseVisualStyleBackColor = false;
+            this.btnDot.Click += new System.EventHandler(this.btn_clicked);
             // 
             // btnThree
             // 
@@ -117,6 +120,7 @@
             this.btnThree.TabIndex = 3;
             this.btnThree.Text = "3";
             this.btnThree.UseVisualStyleBackColor = false;
+            this.btnThree.Click += new System.EventHandler(this.btn_clicked);
             // 
             // btnTwo
             // 
@@ -133,6 +137,7 @@
             this.btnTwo.TabIndex = 2;
             this.btnTwo.Text = "2";
             this.btnTwo.UseVisualStyleBackColor = false;
+            this.btnTwo.Click += new System.EventHandler(this.btn_clicked);
             // 
             // btnOne
             // 
@@ -149,6 +154,7 @@
             this.btnOne.TabIndex = 1;
             this.btnOne.Text = "1";
             this.btnOne.UseVisualStyleBackColor = false;
+            this.btnOne.Click += new System.EventHandler(this.btn_clicked);
             // 
             // btnMinus
             // 
@@ -165,6 +171,7 @@
             this.btnMinus.TabIndex = 16;
             this.btnMinus.Text = "-";
             this.btnMinus.UseVisualStyleBackColor = false;
+            this.btnMinus.Click += new System.EventHandler(this.operator_click);
             // 
             // btnSix
             // 
@@ -181,6 +188,7 @@
             this.btnSix.TabIndex = 6;
             this.btnSix.Text = "6";
             this.btnSix.UseVisualStyleBackColor = false;
+            this.btnSix.Click += new System.EventHandler(this.btn_clicked);
             // 
             // btnFive
             // 
@@ -197,6 +205,7 @@
             this.btnFive.TabIndex = 5;
             this.btnFive.Text = "5";
             this.btnFive.UseVisualStyleBackColor = false;
+            this.btnFive.Click += new System.EventHandler(this.btn_clicked);
             // 
             // btnFour
             // 
@@ -213,6 +222,7 @@
             this.btnFour.TabIndex = 4;
             this.btnFour.Text = "4";
             this.btnFour.UseVisualStyleBackColor = false;
+            this.btnFour.Click += new System.EventHandler(this.btn_clicked);
             // 
             // btnTimes
             // 
@@ -230,6 +240,7 @@
             this.btnTimes.Text = "*";
             this.btnTimes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnTimes.UseVisualStyleBackColor = false;
+            this.btnTimes.Click += new System.EventHandler(this.operator_click);
             // 
             // btnNine
             // 
@@ -246,6 +257,7 @@
             this.btnNine.TabIndex = 9;
             this.btnNine.Text = "9";
             this.btnNine.UseVisualStyleBackColor = false;
+            this.btnNine.Click += new System.EventHandler(this.btn_clicked);
             // 
             // btnEight
             // 
@@ -262,6 +274,7 @@
             this.btnEight.TabIndex = 8;
             this.btnEight.Text = "8";
             this.btnEight.UseVisualStyleBackColor = false;
+            this.btnEight.Click += new System.EventHandler(this.btn_clicked);
             // 
             // btnSeven
             // 
@@ -278,6 +291,7 @@
             this.btnSeven.TabIndex = 7;
             this.btnSeven.Text = "7";
             this.btnSeven.UseVisualStyleBackColor = false;
+            this.btnSeven.Click += new System.EventHandler(this.btn_clicked);
             // 
             // btnDivide
             // 
@@ -294,6 +308,7 @@
             this.btnDivide.TabIndex = 18;
             this.btnDivide.Text = "/";
             this.btnDivide.UseVisualStyleBackColor = false;
+            this.btnDivide.Click += new System.EventHandler(this.operator_click);
             // 
             // btnCancel
             // 
@@ -310,6 +325,7 @@
             this.btnCancel.TabIndex = 12;
             this.btnCancel.Text = "C";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnCancelEntry
             // 
@@ -326,6 +342,7 @@
             this.btnCancelEntry.TabIndex = 11;
             this.btnCancelEntry.Text = "CE";
             this.btnCancelEntry.UseVisualStyleBackColor = false;
+            this.btnCancelEntry.Click += new System.EventHandler(this.btnCancelEntry_Click);
             // 
             // btnPlus
             // 
@@ -342,6 +359,7 @@
             this.btnPlus.TabIndex = 15;
             this.btnPlus.Text = "+";
             this.btnPlus.UseVisualStyleBackColor = false;
+            this.btnPlus.Click += new System.EventHandler(this.operator_click);
             // 
             // panel1
             // 
@@ -355,22 +373,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(360, 184);
             this.panel1.TabIndex = 19;
-            // 
-            // txtEntryNResult
-            // 
-            this.txtEntryNResult.BackColor = System.Drawing.Color.Navy;
-            this.txtEntryNResult.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtEntryNResult.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.txtEntryNResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEntryNResult.ForeColor = System.Drawing.Color.Cornsilk;
-            this.txtEntryNResult.Location = new System.Drawing.Point(3, 51);
-            this.txtEntryNResult.Name = "txtEntryNResult";
-            this.txtEntryNResult.ReadOnly = true;
-            this.txtEntryNResult.Size = new System.Drawing.Size(341, 68);
-            this.txtEntryNResult.TabIndex = 14;
-            this.txtEntryNResult.Text = "0";
-            this.txtEntryNResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.txtEntryNResult.WordWrap = false;
             // 
             // txtEntryStatus
             // 
@@ -386,6 +388,22 @@
             this.txtEntryStatus.TabIndex = 15;
             this.txtEntryStatus.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtEntryStatus.WordWrap = false;
+            // 
+            // txtEntryNResult
+            // 
+            this.txtEntryNResult.BackColor = System.Drawing.Color.Navy;
+            this.txtEntryNResult.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtEntryNResult.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.txtEntryNResult.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEntryNResult.ForeColor = System.Drawing.Color.NavajoWhite;
+            this.txtEntryNResult.Location = new System.Drawing.Point(13, 51);
+            this.txtEntryNResult.Name = "txtEntryNResult";
+            this.txtEntryNResult.ReadOnly = true;
+            this.txtEntryNResult.Size = new System.Drawing.Size(331, 68);
+            this.txtEntryNResult.TabIndex = 14;
+            this.txtEntryNResult.Text = "0";
+            this.txtEntryNResult.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.txtEntryNResult.WordWrap = false;
             // 
             // frmCalculator
             // 

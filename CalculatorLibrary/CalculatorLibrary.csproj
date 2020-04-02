@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GlobalConfig.cs" />
+    <Compile Include="Helpers\Utility.cs" />
     <Compile Include="OperatorsModel\IOperatorsRepository.cs" />
     <Compile Include="OperatorsModel\OperatorsRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
